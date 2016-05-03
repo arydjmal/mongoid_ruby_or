@@ -1,7 +1,7 @@
 module Mongoid
   class Criteria
     def ruby_or
-      selector   = self.selector
+      selector   = self.selector.dup
       or_clauses = selector.delete('$or')
       limit      = options[:limit]
       sort       = options[:sort]

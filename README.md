@@ -57,7 +57,7 @@ index({ content_id: 1, brand_id: 1 })
 
 ```
 
-So in this simpliefied case, we will need to add an extra index.
+So in this simplified case, we will need to add an extra index.
 
 Sometimes is not worth it, maybe that query is not use very often to justify the necessity to maintain the index, or you are trying to cut back on indexes for that collection.
 
@@ -69,6 +69,13 @@ Add to your Gemfile:
 
 ```ruby
 gem :mongoid_ruby_or
+```
+
+For mongoid v3.x use:
+
+
+```ruby
+gem :mongoid_ruby_or, '0.1.0'
 ```
 
 ## Usage
@@ -87,7 +94,8 @@ brand.resources.or({name: /^test/}, {content_id: /^test/}).limit(10).ruby_or
 
 ## Some observations
 
- * **built for a system running ruby 1.9.3, rails 3.2, mongo 2.6.3, and mongoid 3.1.6**, may not be an issue in the future
+ * ~~**built for a system running ruby 1.9.3, rails 3.2, mongo 2.6.3, and mongoid 3.1.6**, may not be an issue in the future~~
+ * **built for a system running ruby 2.0.0, rails 4.2.6, mongo 2.6.3, and mongoid 5.1.1**, may not be an issue in the future
  * tested for simple $or clauses
  * can't do count for obvious reasons
  * ruby_or will cut the criteria chain and get results as soon as invoked, so use at the end

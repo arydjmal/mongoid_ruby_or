@@ -1,6 +1,6 @@
 test:
-  sessions:
+  clients:
     default:
       database: mongoid_ruby_or_test
       hosts:
-        - localhost:27017
+        - 127.0.0.1:27017
